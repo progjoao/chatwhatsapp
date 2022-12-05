@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Chat Atalho</title>
+
+</head>
+<body>
+
+   <style>
+      body {
+         color: #fff;
+         background-color: #1f1e1e;
+         margin: 0 auto;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         height: 100vh;
+         font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+      }
+      
+      main {
+         display: flex;
+         flex-direction: column;
+      }
+
+      main input {
+         margin-bottom: 1em;
+         width: 200px;
+         height: 35px;
+         border-radius: 5px;
+      }
+      
+      main button {
+         width: 125px;
+         height: 35px;
+         margin: 0 auto;
+      }
+
+   </style>
+
+   <header>
+      <h1>Digite o número</h1>
+   </header>
+
+   <main>
+      <input type="tel" class="phone-number">
+      <button class="start-conversation">Iniciar conversa</button>
+   </main>
+
+   <footer>
+      <h2>Make from João Ricardo 👌</h2>
+   </footer>
+
+
+   <script>
+      const inputPhoneNumber = document.querySelector('.phone-number')
+      
+      
+      function startConversation() {
+         window.location.href = `https://api.whatsapp.com/send?phone=${inputPhoneNumber.value}`
+      }
+      
+      document.querySelector('.start-conversation').addEventListener('click', () => startConversation())
+      window.onload = inputPhoneNumber.value = ''
+      
+   </script>
+
+</body>
+</html>
